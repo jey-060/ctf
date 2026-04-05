@@ -30,7 +30,7 @@
             for (let i = 0; i < 30; i++) {
                 for (let c of chars) {
                     const time = await check(flag + c);
-                    if (time > 2) { 
+                    if (time > 1) { 
                         flag += c;
                         report("찾은 글자: " + flag);
                         if (c === '}') return;
