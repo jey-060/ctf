@@ -30,14 +30,17 @@
 
         async function start() {
             report("start (Target: " + TARGET + ")");
-
-            const alive = await fetch(TARGET, { mode: 'no-cors' }).then(() => true).catch(() => false);
-            report("server test: " + (alive ? "성공" : "실패"));
-
-            if (!alive) {
-                report("안됨");
-                return;
-            }
+            const img = new Image();
+            img.src = `${TARGET}/favicon.ico?cb=${Date.now()}`;
+    
+            img.onload = () => {
+            report("이미지방식");
+            runBruteForce(); 
+            };
+            img.onerror = () => {
+        report("실패");
+    }
+            
 
             report("검사");
             for (let i = 0; i < 20; i++) {
