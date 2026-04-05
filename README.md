@@ -25,8 +25,11 @@
         }
 
         async function bruteForce() {
-            report("start2: " + flag);
-            
+            report("start3: " + flag);
+            if (await leak("THIS_IS_FAKE_FLAG_12345")) {
+        report("에러");
+        return;
+    }
            while (!flag.endsWith("}")) {
                 let found = false;
                 for (let c of chars) {
