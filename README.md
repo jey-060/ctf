@@ -25,7 +25,7 @@
         }
 
         async function bruteForce() {
-            report("start1: " + flag);
+            report("start2: " + flag);
             
            while (!flag.endsWith("}")) {
                 let found = false;
